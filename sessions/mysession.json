@@ -1,0 +1,14 @@
+{
+    "addresses": [
+        "192.168.1.1",
+        "10.0.0.255",
+        "172.16.0.1"
+    ],
+    "node_names": [
+        "Node1",
+        "Node2",
+        "Node3"
+    ],
+    "session_name": "MySession",
+    "save_time": "19/05/2024 16:34:16"
+}
