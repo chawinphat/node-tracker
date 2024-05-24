@@ -45,7 +45,7 @@ def save_session(addresses: List[str], node_names: List[str] = None, session_nam
         if not is_valid_ip(address):
             raise ValueError(f"Error: Invalid IP address found: {address}")
     
-    if len(addresses) != len(node_names):
+    if node_names != None and len(addresses) != len(node_names):
         raise IndexError("Error: Number of addresses and node names are not equal.")
     
     #formulate json file
@@ -53,7 +53,7 @@ def save_session(addresses: List[str], node_names: List[str] = None, session_nam
 
 addresses = ["192.168.1.1", "10.0.0.255", "172.16.0.1"]
 node_names = ["Node1", "Node2", "Node3"]
-session_name = "MySession2"
+session_name = "MySession3"
 
 try:
     save_session(addresses, node_names, session_name)
