@@ -53,7 +53,7 @@ def save_session(addresses: List[str], node_names: List[str] = None, session_nam
 
 addresses = ["192.168.1.1", "10.0.0.255", "172.16.0.1"]
 node_names = ["Node1", "Node2", "Node3"]
-session_name = "MySession"
+session_name = "MySession2"
 
 try:
     save_session(addresses, node_names, session_name)
