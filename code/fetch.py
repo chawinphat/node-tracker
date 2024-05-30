@@ -6,16 +6,18 @@ import json
 def find_session(session_name: str=None) -> str:
     if not session_name:
         session_name = "most_recent"
+    
+    session_name = session_name + ".json"
     for dirpath, dirnames, filenames in os.walk("./sessions"):
         if session_name in filenames:
-            return os.path.join(dirpath, session_name + ".json")
+            return os.path.join(dirpath, session_name)
     return None
 
 # def select_node(address: str, session_path: str, node_name: str):
     
 #main function which calls find_session then 
 def get_address_with_node_name(session_path: str, node_name: str):
-    session_file = open("./sessions/" + session_path, 'r')
+    session_file = open(session_path, 'r')
     session = json.load(session_file)
 
     for node_id in range(len(session["node_names"])):
@@ -24,7 +26,7 @@ def get_address_with_node_name(session_path: str, node_name: str):
     return None
             
 def get_address_with_node_id(session_path: str, node_id: int):
-    session_file = open("./sessions/" + session_path, 'r')
+    session_file = open(session_path, 'r')
     session = json.load(session_file)
     if node_id >= len(session["addresses"]) or node_id < 0:
         return None

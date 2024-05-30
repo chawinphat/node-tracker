@@ -4,7 +4,7 @@ from PyInquirer import prompt, print_json, Separator
 #display_session_json("most_recent.json")
 
 def display_session(session_path):
-    session_file = open("./sessions/" + session_path, 'r')
+    session_file = open(session_path, 'r')
     session = json.load(session_file)
 
     choices = []
@@ -46,7 +46,7 @@ def display_session(session_path):
     selection = prompt(module_list_question)["nodeId"]
     return selection
     
-display_session("mysession.json")
+# display_session("mysession.json")
 
 
 

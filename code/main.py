@@ -1,13 +1,12 @@
 import typer
-import subprocess
-from PyInquirer import prompt, print_json, Separator
+import sys
 from rich import print as rprint
 from typing import List
 
 from save import save_session
 from fetch import *
 from ssh import enter
-from interface import display_session_json
+from interface import display_session
 
 app = typer.Typer()
 
@@ -25,16 +24,21 @@ def enter_session_command(session_name: str=None, node_id: int=None, node_name: 
     if not session_path:
         raise FileNotFoundError("Session does not exist")
     
-    if node_id:
-        node_address = get_address_with_node_id(session_path, node_id)
-        if not node_address:
-            raise IndexError("Node Id specified is invalid")
-    else: #display the path
-        #cli interface here with selection argument
-        display_session_json(session_path)
-        input = 
+    if node_id == None:
+        node_id = display_session(session_path)
+
+    node_address = get_address_with_node_id(session_path, node_id)
+    if not node_address:
+        raise IndexError("Node Id specified is invalid")
+
     enter(node_address)
 
-
 if __name__ == "__main__":
-    app() 
+    app()
+    # command = typer.main.get_command(app)
+    # try:
+    #    result = command(standalone_mode=False)
+    # except:
+    #    print(f'Exception was thrown')
+
+    # sys.exit()

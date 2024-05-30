@@ -13,7 +13,6 @@ def is_valid_ip(address: str):
         return False
 
 def save_session_to_json(addresses: List[str], node_names: List[str], session_name: str):
-
     # datetime object containing current date and time
     now = datetime.now()
     # dd/mm/YY H:M:S
@@ -51,14 +50,14 @@ def save_session(addresses: List[str], node_names: List[str] = None, session_nam
     #formulate json file
     save_session_to_json(addresses, node_names, session_name)
 
-addresses = ["192.168.1.1", "10.0.0.255", "172.16.0.1"]
-node_names = ["Node1", "Node2", "Node3"]
-session_name = "MySession3"
+# addresses = ["192.168.1.1", "10.0.0.255", "172.16.0.1"]
+# node_names = ["Node1", "Node2", "Node3"]
+# session_name = "MySession3"
 
-try:
-    save_session(addresses, node_names, session_name)
-except ValueError as e:
-    print(e)
-except NotImplementedError as e:
-    print(e)
+# try:
+#     save_session(addresses, node_names, session_name)
+# except ValueError as e:
+#     print(e)
+# except NotImplementedError as e:
+#     print(e)
 
