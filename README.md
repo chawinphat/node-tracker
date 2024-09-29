@@ -1,2 +1,2 @@
 # node-tracker
-Command Line Application to manage Nodes in Distributed Systems research experiments.
+Command Line application to manage nodes in distributed systems research experiments.
